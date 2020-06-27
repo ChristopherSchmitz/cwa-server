@@ -84,12 +84,9 @@ spring:
   main:
     web-application-type: NONE
   # Postgres configuration
-  jpa:
-    hibernate:
-      ddl-auto: validate
   flyway:
     enabled: true
-    locations: classpath:/db/migration, classpath:/db/specific/{vendor}
+    locations: classpath:/db/migration/{vendor}
     password: ${POSTGRESQL_PASSWORD_FLYWAY:local_setup_flyway}
     user: ${POSTGRESQL_USER_FLYWAY:local_setup_flyway}
 
